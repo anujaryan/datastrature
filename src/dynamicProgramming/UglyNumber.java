@@ -27,7 +27,46 @@ public class UglyNumber {
 
 	public static void main(String[] args) {
 
-		int n = 15;
-		findUgly(n, 7);
+		// int n = 15;
+		// findUgly(n, 7);
+
+		int no = getNthUglyNo(150);
+		System.out.println("150th ugly " + "no. is " + no);
+	}
+
+	// this function divide a the greatest divisible power of b
+
+	static int maxDivide(int a, int b) {
+
+		if (a % b == 0)
+			a = a / b;
+		return a;
+
+	}
+
+	// this check number is ugly or not
+	static int isUgly(int no) {
+
+		no = maxDivide(no, 2);
+		no = maxDivide(no, 3);
+		no = maxDivide(no, 5);
+
+		return (no == 1) ? 1 : 0;
+	}
+
+	// function to get nth ugly number
+
+	static int getNthUglyNo(int n) {
+		int i = 1;
+		// count the ugly number
+		int count = 1;
+
+		// check count until count to n
+		while (n > count) {
+			i++;
+			if (isUgly(i) == 1)
+				count++;
+		}
+		return i;
 	}
 }
