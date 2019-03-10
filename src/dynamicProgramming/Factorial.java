@@ -1,4 +1,4 @@
-package dynamicProblem;
+package dynamicProgramming;
 
 public class Factorial {
 
