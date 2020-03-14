@@ -55,9 +55,10 @@ public class BstSimulation implements Comparator<Object> {
 
 		if (p == null) {
 			return p = new Bucket(val);
-		} else if (p.val > val) {
+		} else if (compare(p.val, val) > 0) {
 			p = doInsert(p.left, val);
-		} else if (p.val < val) {
+		} else if (compare(p.val, val) < 0) {
+
 			p = doInsert(p.right, val);
 		}
 		return p;
