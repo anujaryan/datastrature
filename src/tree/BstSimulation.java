@@ -58,6 +58,7 @@ public class BstSimulation implements Comparator<Object> {
 		} else if (compare(p.val, val) > 0) {
 			p = doInsert(p.left, val);
 		} else if (compare(p.val, val) < 0) {
+
 			p = doInsert(p.right, val);
 		}
 		return p;
